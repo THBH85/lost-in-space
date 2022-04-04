@@ -11,5 +11,9 @@ function setup() {
 }
 
 function draw() {
-	game.draw()
+    game.draw()
+}
+
+function keyPressed() {
+    game.player.keyPressed()
 }
