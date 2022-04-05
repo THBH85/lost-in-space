@@ -1,5 +1,5 @@
 const game = new Game()
-//const speed = 1
+let score = 0
 
 function preload() {
 	game.preload()
@@ -12,8 +12,9 @@ function setup() {
 
 function draw() {
     game.draw()
+	text("Your Lifes " + score, 10, 550)
 }
 
-function keyPressed() {
-    game.player.keyPressed()
-}
+//function keyPressed() {
+//    game.player.keyPressed()
+//}

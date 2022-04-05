@@ -15,24 +15,32 @@ class Player {
 			this.x = 0
         }
 
-        image(game.playerImage, this.x, this.y, this.height, this.width)
-    }
-
-    moveLeft() {
-        this.x -= 50
-    }
-
-    moveRight() {
-        this.x += 50
-    }
-
-    keyPressed() {
-        if (keyIsDown(37)) {
-            this.moveLeft()
+        if (this.y >= 600 - this.height) {
+            this.y = 600 - this.height
         }
 
-        if (keyIsDown(39)) {
-            this.moveRight()
-         }
+        if (this.y <= 0) {
+            this.y = 0
+        }
+
+        image(game.playerImage, this.x, this.y, this.height, this.width)
+
+        if (keyIsDown(LEFT_ARROW)) {
+            this.x -= 10;
+        }
+
+        if (keyIsDown(RIGHT_ARROW)) {
+            this.x += 10;
+        }
+
+        if (keyIsDown(UP_ARROW)) {
+            this.y -= 10;
+        }
+
+        if (keyIsDown(DOWN_ARROW)) {
+            this.y += 10;
+        }
     }
+    
+    
 }

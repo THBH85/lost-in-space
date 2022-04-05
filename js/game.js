@@ -2,8 +2,8 @@ class Game {
 	constructor() {
 		this.background = new Background()
 		this.player = new Player()
-		this.bugs = []
 		this.backgroundImages = []
+		this.bugs = []
 		this.mate = []
 		this.playerImage = ''
 		this.bugsSpeed = 1
@@ -36,7 +36,23 @@ class Game {
 		if (frameCount % 50 === 0) {
            this.mateSpeed = this.mateSpeed += 0.2
      	}
-   
+
+		this.bugs = this.bugs.filter(bug => {
+			if (bug.collision(this.player)) {
+				return false
+			} else {
+				return true
+			}
+		})
+		//console.log(this.bugs.length)
+
+		this.mate = this.mate.filter(mat => {
+			if (mat.collision(this.player)) {
+				return false
+			} else {
+				return true
+			}
+		})
     }
 
     preload() {
