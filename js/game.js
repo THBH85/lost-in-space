@@ -4,24 +4,38 @@ class Game {
 		this.player = new Player()
 		this.bugs = []
 		this.backgroundImages = []
+		this.mate = []
 		this.playerImage = ''
-		this.speed = 1
+		this.bugsSpeed = 1
+		this.mateSpeed = 0.5
     }
 
     draw() {
         clear()
 		this.background.draw()
 		this.player.draw()
-        if (frameCount % 20 === 0) {
-            this.bugs.push(new Bugs(this.bugsImage))
-        }
 
+        // draw bugs
+		if (frameCount % 50 === 0) {
+            this.bugs.push(new Bugs(this.bugsImage))
+		}
         this.bugs.forEach(function (bug) {
             bug.draw()
         })
-		 if (frameCount % 99 === 0) {
-            this.speed = this.speed += 0.2
+		 if (frameCount % 30 === 0) {
+            this.bugsSpeed = this.bugsSpeed += 0.2
         }
+
+		// draw mate
+		if (frameCount % 500 === 0) {
+            this.mate.push(new Mate(this.mateImage))
+        }
+        this.mate.forEach(function (mat) {
+            mat.draw()
+        })
+		if (frameCount % 50 === 0) {
+           this.mateSpeed = this.mateSpeed += 0.2
+     	}
    
     }
 
@@ -33,6 +47,7 @@ class Game {
 		]
 		this.playerImage = loadImage('../assets/player/programming.png')
 		this.bugsImage = loadImage('../assets/bugs/malware.png')
+		this.mateImage = loadImage('../assets/mate/mate.jpeg')
 	}
 }
 
