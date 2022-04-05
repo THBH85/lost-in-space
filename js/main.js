@@ -1,4 +1,5 @@
 const game = new Game()
+//const speed = 1
 
 function preload() {
 	console.log('this is the preload')
