@@ -1,5 +1,5 @@
 const game = new Game()
-let score = 0
+let score = 5
 
 function preload() {
 	game.preload()
@@ -12,7 +12,7 @@ function setup() {
 
 function draw() {
     game.draw()
-	text("Your Lifes " + score, 10, 550)
+	text("FRUSTRATION TOLERANCE:  " + score, 20, 550, fill(232, 26, 143))
 }
 
 //function keyPressed() {

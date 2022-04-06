@@ -3,5 +3,17 @@ body {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    color: aqua;
+    font-family: "Play", sans-serif; color: aqua;
+}
+
+#mate-sound {
+    display: none
+}
+
+#bug-sound {
+    display: none
+}
+
+#game-over {
+    display: none
 }

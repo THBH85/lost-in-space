@@ -15,8 +15,8 @@ class Game {
 		this.background.draw()
 		this.player.draw()
 
-        // draw bugs
-		if (frameCount % 50 === 0) {
+        // DRAW BUGS
+		if (frameCount % 40 === 0) {
             this.bugs.push(new Bugs(this.bugsImage))
 		}
         this.bugs.forEach(function (bug) {
@@ -26,7 +26,15 @@ class Game {
             this.bugsSpeed = this.bugsSpeed += 0.2
         }
 
-		// draw mate
+		this.bugs = this.bugs.filter(bug => {
+			if (bug.collision(this.player)) {
+				return false
+			} else {
+				return true
+			}
+		})
+
+		// DRAW MATE
 		if (frameCount % 500 === 0) {
             this.mate.push(new Mate(this.mateImage))
         }
@@ -37,15 +45,6 @@ class Game {
            this.mateSpeed = this.mateSpeed += 0.2
      	}
 
-		this.bugs = this.bugs.filter(bug => {
-			if (bug.collision(this.player)) {
-				return false
-			} else {
-				return true
-			}
-		})
-		//console.log(this.bugs.length)
-
 		this.mate = this.mate.filter(mat => {
 			if (mat.collision(this.player)) {
 				return false
@@ -53,6 +52,17 @@ class Game {
 				return true
 			}
 		})
+
+		// GAME OVER
+		let gameOverSound = document.getElementById("game-over")
+		if (score === 0) (
+			alert("GAME OVER") && gameOverSound.play()
+		)
+
+		// YOU WON
+		if (score >= 10) (
+			alert("YOU WON")
+		)
     }
 
     preload() {

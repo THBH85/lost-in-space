@@ -3,12 +3,13 @@ class Bugs {
         this.image = image
         this.y = 600
         this.x = (Math.random() * 1000) / 1
-        this.width = 30
-        this.height = 30
+        this.width = 60
+        this.height = 60
     }
 
     collision(playerInfo) {
-		//console.log('collision', playerInfo)
+		// provide bug sound
+		let bugSound = document.getElementById("bug-sound")
 		// get the middle of the obstacle
 		const bugsX = this.x + this.width / 2
 		const bugsY = this.y + this.height / 2
@@ -16,13 +17,13 @@ class Bugs {
 		const playerX = playerInfo.x + playerInfo.width / 2
 		const playerY = playerInfo.y + playerInfo.height / 2
 		// measure the distance
-		// dist() is a p5 function
-		if (dist(bugsX, bugsY, playerX, playerY) > 25) {
+		if (dist(bugsX, bugsY, playerX, playerY) > 50) {
 			return false
 		} else {
-			score--
+			score-- && bugSound.play()
 			return true
 		}
+		// console.log('collision', playerInfo)
 	}
 
     draw() {

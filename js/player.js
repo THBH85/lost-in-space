@@ -26,19 +26,19 @@ class Player {
         image(game.playerImage, this.x, this.y, this.height, this.width)
 
         if (keyIsDown(LEFT_ARROW)) {
-            this.x -= 10;
+            this.x -= 20;
         }
 
         if (keyIsDown(RIGHT_ARROW)) {
-            this.x += 10;
+            this.x += 20;
         }
 
         if (keyIsDown(UP_ARROW)) {
-            this.y -= 10;
+            this.y -= 20;
         }
 
         if (keyIsDown(DOWN_ARROW)) {
-            this.y += 10;
+            this.y += 20;
         }
     }
     
