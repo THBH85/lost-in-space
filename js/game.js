@@ -55,8 +55,9 @@ class Game {
 
 		// GAME OVER
 		let gameOverSound = document.getElementById("game-over")
+		// let gameOverInfo = document.getElementById("lost")
 		if (score === 0) (
-			alert("GAME OVER") && gameOverSound.play()
+			gameOverSound.play() && alert("YOU LOST") && noLoop() 
 		)
 
 		// YOU WON

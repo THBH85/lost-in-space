@@ -6,7 +6,6 @@ function preload() {
 }
 
 function setup() {
-	// console.log('this is the setup')
 	createCanvas(1000, 600)
 }
 

@@ -17,3 +17,9 @@ body {
 #game-over {
     display: none
 }
+
+
+#lost {
+    position: absolute;
+    display: none;
+}
