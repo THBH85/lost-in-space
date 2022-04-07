@@ -22,17 +22,10 @@ body {
     color: rgb(26, 222, 232);
 }
 
-#instructions {
+.show {
     display: none;
 }
 
-#lost {
-    display: none;
-}
-
-#won {
-    display: none;
-}
 
 #mate-sound {
     display: none

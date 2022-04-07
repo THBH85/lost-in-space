@@ -8,27 +8,29 @@ class Game {
 		this.playerImage = ''
 		this.bugsSpeed = 1
 		this.mateSpeed = 0.5
-    }
+	}
 
-    draw() {
-        clear()
+
+	draw() {
+		clear()
+
+		console.log("hello", mode)
+		
 		this.background.draw()
 		this.player.draw()
 
-		// INSTRUCTIONS
-		// let instructionsInfo = document.getElementById("instructions")
-		// instructionsInfo.removeAttribute('id')
 
-        // DRAW BUGS
+
+		// DRAW BUGS
 		if (frameCount % 40 === 0) {
-            this.bugs.push(new Bugs(this.bugsImage))
+			this.bugs.push(new Bugs(this.bugsImage))
 		}
-        this.bugs.forEach(function (bug) {
-            bug.draw()
-        })
-		 if (frameCount % 30 === 0) {
-            this.bugsSpeed = this.bugsSpeed += 0.2
-        }
+		this.bugs.forEach(function (bug) {
+			bug.draw()
+		})
+		if (frameCount % 30 === 0) {
+			this.bugsSpeed = this.bugsSpeed += 0.2
+		}
 
 		this.bugs = this.bugs.filter(bug => {
 			if (bug.collision(this.player)) {
@@ -40,14 +42,14 @@ class Game {
 
 		// DRAW MATE
 		if (frameCount % 500 === 0) {
-            this.mate.push(new Mate(this.mateImage))
-        }
-        this.mate.forEach(function (mat) {
-            mat.draw()
-        })
+			this.mate.push(new Mate(this.mateImage))
+		}
+		this.mate.forEach(function (mat) {
+			mat.draw()
+		})
 		if (frameCount % 50 === 0) {
-           this.mateSpeed = this.mateSpeed += 0.2
-     	}
+			this.mateSpeed = this.mateSpeed += 0.2
+		}
 
 		this.mate = this.mate.filter(mat => {
 			if (mat.collision(this.player)) {
@@ -56,29 +58,9 @@ class Game {
 				return true
 			}
 		})
+	}
 
-		// GAME OVER
-		let gameOverSound = document.getElementById("game-over-sound")
-		let gameOverInfo = document.getElementById("lost")
-		if (score <= 0) {
-			gameOverSound.play() 
-			gameOverInfo.removeAttribute('id')
-			noLoop()
-		}
-
-		// GAME WON
-		let gameWonSound = document.getElementById("game-won-sound")
-		let gameWonInfo = document.getElementById("won")
-		if (score >= 10) {
-			gameWonSound.play() 
-			gameWonInfo.removeAttribute('id')
-			noLoop()
-		}
-	
-		
-    }
-
-    preload() {
+	preload() {
 		this.backgroundImages = [
 			{ src: loadImage('../assets/background/Nebula Aqua-Pink.png'), y: 0, speed: 1 },
 			{ src: loadImage('../assets/background/Stars Small_1.png'), y: 0, speed: 1.5 },
