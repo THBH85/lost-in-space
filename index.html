@@ -14,6 +14,32 @@
 </head>
 
 <body>
+    
+    <div class="gameStatus" id="instructions">
+        <h1>INSTRUCTIONS</h1>
+        <p>Move player with -ARROW- keys</p>
+        <p>FRUSTRATION TOLERANCE decreases if you hit BUGS-icons</p>
+        <p>FRUSTRATION TOLERANCE increases if you hit MATE-icons</p>
+        <p>FRUSTRATION TOLERANCE = 0 -> YOU LOSE / FRUSTRATION TOLERANCE = 10 -> YOU WIN</p>
+        <p class="play">Hit -SPACE- to play</p>
+    </div>
+
+    <div class="gameStatus" id="lost">
+        <h1>YOU LOST!</h1>
+        <p>Your Frustration tolerance is zero</p>
+        <p>You can not take any more bullshit today</p>
+        <p>Do some yoga and try again!</p>
+        <p class="play">Hit -SPACE- to play another round</p>
+    </div>
+
+    <div class="gameStatus" id="won">
+        <h1>YOU WON!</h1>
+        <p>Your Frustration tolerance is 10</p>
+        <p>Great job avoiding all the bugs</p>
+        <p>Your code is super clean and readable!</p>
+        <p class="play">Hit -SPACE- to play another round</p>
+    </div>
+
     <script src="./js/mate.js"></script>
     <script src="./js/bugs.js"></script>
     <script src="./js/background.js"></script>
@@ -21,14 +47,11 @@
     <script src="./js/game.js"></script>
     <script src="./js/main.js"></script>
 
-    <div id="lost">
-        <h1>YOU LOST!</h1>
-        <p>Your Frustration tolerance is 0</p>
-        <p>Do some yoga and start again!</p>
-    </div>
+    
 
     <audio id="mate-sound" src="assets/sounds/mate-sound.wav" preload="auto"> 
     <audio id="bug-sound" src="assets/sounds/bug-sound.wav" preload="auto">
-    <audio id="game-over" src="assets/sounds/game-over.wav" preload="auto">
+    <audio id="game-over-sound" src="assets/sounds/game-over.wav" preload="auto">
+    <audio id="game-won-sound" src="assets/sounds/game-won.wav" preload="auto">
 </body>
 </html>

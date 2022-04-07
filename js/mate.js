@@ -17,7 +17,8 @@ class Mate {
 		if (dist(mateX, mateY, playerX, playerY) > 50) {
 			return false
 		} else {
-			score++ && mateSound.play();
+			score++  
+            mateSound.play();
 			return true
 		}
 	}

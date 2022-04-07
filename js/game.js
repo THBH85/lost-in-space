@@ -15,6 +15,10 @@ class Game {
 		this.background.draw()
 		this.player.draw()
 
+		// INSTRUCTIONS
+		// let instructionsInfo = document.getElementById("instructions")
+		// instructionsInfo.removeAttribute('id')
+
         // DRAW BUGS
 		if (frameCount % 40 === 0) {
             this.bugs.push(new Bugs(this.bugsImage))
@@ -54,16 +58,24 @@ class Game {
 		})
 
 		// GAME OVER
-		let gameOverSound = document.getElementById("game-over")
-		// let gameOverInfo = document.getElementById("lost")
-		if (score === 0) (
-			gameOverSound.play() && alert("YOU LOST") && noLoop() 
-		)
+		let gameOverSound = document.getElementById("game-over-sound")
+		let gameOverInfo = document.getElementById("lost")
+		if (score <= 0) {
+			gameOverSound.play() 
+			gameOverInfo.removeAttribute('id')
+			noLoop()
+		}
 
-		// YOU WON
-		if (score >= 10) (
-			alert("YOU WON")
-		)
+		// GAME WON
+		let gameWonSound = document.getElementById("game-won-sound")
+		let gameWonInfo = document.getElementById("won")
+		if (score >= 10) {
+			gameWonSound.play() 
+			gameWonInfo.removeAttribute('id')
+			noLoop()
+		}
+	
+		
     }
 
     preload() {

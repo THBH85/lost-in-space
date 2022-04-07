@@ -10,10 +10,12 @@ function setup() {
 }
 
 function draw() {
-    game.draw()
-	text("FRUSTRATION TOLERANCE:  " + score, 20, 550, fill(232, 26, 143))
+	game.draw()
+	text("FRUSTRATION TOLERANCE:  " + score, 800, 20, fill(232, 26, 143))
 }
 
-//function keyPressed() {
-//    game.player.keyPressed()
-//}
+function keyPressed() {		
+	if (keyCode === 32) {
+      	game.draw()
+  	}
+}  

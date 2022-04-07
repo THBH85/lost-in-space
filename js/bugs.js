@@ -20,7 +20,8 @@ class Bugs {
 		if (dist(bugsX, bugsY, playerX, playerY) > 50) {
 			return false
 		} else {
-			score-- && bugSound.play()
+			score-- 
+			bugSound.play()
 			return true
 		}
 		// console.log('collision', playerInfo)

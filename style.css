@@ -3,7 +3,35 @@ body {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    font-family: "Play", sans-serif; color: aqua;
+    font-family: "Play", sans-serif; color: rgb(232, 26, 143);
+    background-color: black;
+}
+
+.gameStatus {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 700px;
+    height: 400px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.play {
+    color: rgb(26, 222, 232);
+}
+
+#instructions {
+    display: none;
+}
+
+#lost {
+    display: none;
+}
+
+#won {
+    display: none;
 }
 
 #mate-sound {
@@ -14,12 +42,10 @@ body {
     display: none
 }
 
-#game-over {
+#game-over-sound {
     display: none
 }
 
-
-#lost {
-    position: absolute;
-    display: none;
+#game-won-sound {
+    display: none
 }
