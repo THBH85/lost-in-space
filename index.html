@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link 
-        href="https://fonts.googleapis.com/css2?family=Play&display=swap" 
-        rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Creepster&family=Play&display=swap" 
+    rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
@@ -16,7 +16,8 @@
 <body>
     
     <div class="gameStatus">
-        <h1>INSTRUCTIONS</h1>
+        <h1 class="title">LOST IN CODE</h1>
+        <h2>INSTRUCTIONS</h2>
         <p>Move player with -ARROW- keys</p>
         <p>FRUSTRATION TOLERANCE decreases if you hit BUGS-icons</p>
         <p>FRUSTRATION TOLERANCE increases if you hit MATE-icons</p>
@@ -24,16 +25,16 @@
         <p class="play">Hit -SPACE- to play</p>
     </div>
 
-    <div class="gameStatus show">
-        <h1>YOU LOST!</h1>
+    <div class="gameStatus hide">
+        <h1 class="result">YOU LOST!</h1>
         <p>Your Frustration tolerance is zero</p>
         <p>You can not take any more bullshit today</p>
         <p>Do some yoga and try again!</p>
         <p class="play">Hit -SPACE- to play another round</p>
     </div>
 
-    <div class="gameStatus show">
-        <h1>YOU WON!</h1>
+    <div class="gameStatus hide">
+        <h1 class="result">YOU WON!</h1>
         <p>Your Frustration tolerance is 10</p>
         <p>Great job avoiding all the bugs</p>
         <p>Your code is super clean and readable!</p>
@@ -47,11 +48,11 @@
     <script src="./js/game.js"></script>
     <script src="./js/main.js"></script>
 
-    
-
     <audio id="mate-sound" src="assets/sounds/mate-sound.wav" preload="auto"> 
     <audio id="bug-sound" src="assets/sounds/bug-sound.wav" preload="auto">
     <audio id="game-over-sound" src="assets/sounds/game-over.wav" preload="auto">
     <audio id="game-won-sound" src="assets/sounds/game-won.wav" preload="auto">
+
 </body>
+
 </html>

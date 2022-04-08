@@ -13,13 +13,9 @@ class Game {
 
 	draw() {
 		clear()
-
-		console.log("hello", mode)
-		
+		//console.log("hello", mode)	
 		this.background.draw()
 		this.player.draw()
-
-
 
 		// DRAW BUGS
 		if (frameCount % 40 === 0) {

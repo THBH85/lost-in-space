@@ -22,7 +22,18 @@ body {
     color: rgb(26, 222, 232);
 }
 
-.show {
+.title {
+    font-family: "Creepster", sans-serif; color: rgb(26, 222, 232);
+    font-size: 5rem;
+}
+
+.result {
+    font-family: "Creepster",
+    sans-serif;
+    color: rgb(26, 222, 232);
+}
+
+.hide {
     display: none;
 }
 
