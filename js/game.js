@@ -58,13 +58,13 @@ class Game {
 
 	preload() {
 		this.backgroundImages = [
-			{ src: loadImage('../assets/background/Nebula Aqua-Pink.png'), y: 0, speed: 1 },
-			{ src: loadImage('../assets/background/Stars Small_1.png'), y: 0, speed: 1.5 },
-			{ src: loadImage('../assets/background/Stars-Big_1_1_PC.png'), y: 0, speed: 2 }
+			{ src: loadImage('assets/background/Nebula Aqua-Pink.png'), y: 0, speed: 1 },
+			{ src: loadImage('assets/background/Stars Small_1.png'), y: 0, speed: 1.5 },
+			{ src: loadImage('assets/background/Stars-Big_1_1_PC.png'), y: 0, speed: 2 }
 		]
-		this.playerImage = loadImage('../assets/player/programming.png')
-		this.bugsImage = loadImage('../assets/bugs/malware.png')
-		this.mateImage = loadImage('../assets/mate/mate.jpeg')
+		this.playerImage = loadImage('assets/player/programming.png')
+		this.bugsImage = loadImage('assets/bugs/malware.png')
+		this.mateImage = loadImage('assets/mate/mate.jpeg')
 	}
 }
 
