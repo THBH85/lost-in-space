@@ -16,6 +16,7 @@ body {
     width: 700px;
     height: 400px;
     background-color: rgba(0, 0, 0, 0.7);
+    font-size: 1.3rem;
 }
 
 .play {
@@ -24,13 +25,14 @@ body {
 
 .title {
     font-family: "Creepster", sans-serif; color: rgb(26, 222, 232);
-    font-size: 5rem;
+    font-size: 7rem;
 }
 
 .result {
     font-family: "Creepster",
     sans-serif;
     color: rgb(26, 222, 232);
+    font-size: 4 rem;
 }
 
 .hide {

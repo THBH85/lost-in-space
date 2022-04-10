@@ -30,7 +30,6 @@ class Bugs {
     draw() {
         this.y-= game.bugsSpeed
         image(this.image, this.x, this.y, this.height, this.width)
-       
     }
 
 }

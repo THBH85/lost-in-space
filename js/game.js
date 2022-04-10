@@ -54,6 +54,12 @@ class Game {
 				return true
 			}
 		})
+
+		// HOW TO SET SPEED BACK TO DEFAULT WHEN NEW GAME IS CALLED???
+		//if (keyCode == 32 && mode != 1) {  
+		//this.bugsSpeed = 1
+		//this.mateSpeed = 0.5 
+		//}
 	}
 
 	preload() {

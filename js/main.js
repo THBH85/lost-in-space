@@ -22,9 +22,11 @@ function draw() {
 
 	// GAME PLAY
 	if (mode === 1) {
-		instructionsInfo[0].classList.add("hide")
+		clear()
 		game.draw()
-		text("FRUSTRATION TOLERANCE:  " + score, 800, 20, fill(232, 26, 143))
+		text("FRUSTRATION TOLERANCE:  " + score, 750, 20, fill(232, 26, 143))
+		textSize(16)
+		text("HIT -R- TO SEE INSTRUCTIONS", 20 , 20, fill(26, 222, 232))
 	}
 	// GAME LOST
 	if (score === 0) {
@@ -34,8 +36,7 @@ function draw() {
 	if (mode === 2) {
 		gameOverInfo[1].classList.remove("hide")
 		let gameOverSound = document.getElementById("game-over-sound")
-		gameOverSound.play()
-		noLoop()
+		gameOverSound.play()	
 	}
  
 	// GAME WON
@@ -47,18 +48,31 @@ function draw() {
 		gameWonInfo[2].classList.remove("hide")
 		let gameWonSound = document.getElementById("game-won-sound")
 		gameWonSound.play()
-		noLoop()
+		
 	}
 
 }
-
+ 
 
 function keyPressed() {
-	if (keyCode == 32) {
+	if (keyCode == 32 && mode != 1) {  
+		score = 5 
 		mode = 1
-		console.log(mode)
+		instructionsInfo[0].classList.add("hide")
+		gameOverInfo[1].classList.add("hide")  
+		gameWonInfo[2].classList.add("hide")  
+		game.bugsSpeed = 1 
+		game.mateSpeed = 0.5
+	}  
+ 
+	if (keyCode == 82 && mode != 0) {
+		mode = 0 
+		clear()
+		instructionsInfo[0].classList.remove("hide")
+		gameOverInfo[1].classList.add("hide")  
+		gameWonInfo[2].classList.add("hide")
 	}
-
 }
+ 
 
-
+ 
